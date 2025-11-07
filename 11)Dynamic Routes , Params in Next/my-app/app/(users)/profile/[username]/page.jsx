@@ -2,7 +2,6 @@
 //   console.log(props)
 //   const user = await props.params;
 
-import { use } from "react";
 
 //   //   console.log(user);
 
@@ -10,6 +9,8 @@ import { use } from "react";
 // };
 
 // export default SingleProfile;
+'use client';
+import { use } from "react";
 const SingleProfile = (props) => {
   console.log(props)
   const user = use(props.params);

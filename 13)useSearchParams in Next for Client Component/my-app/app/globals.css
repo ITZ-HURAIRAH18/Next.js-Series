@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+:root {
+  --font-oswald: var(--font-oswald);
+  --font-poppins: var(--font-poppins);
+}
+
+.font-oswald {
+  font-family: var(--font-oswald), sans-serif;
+}
+
+.font-poppins {
+  font-family: var(--font-poppins), sans-serif;
+}
