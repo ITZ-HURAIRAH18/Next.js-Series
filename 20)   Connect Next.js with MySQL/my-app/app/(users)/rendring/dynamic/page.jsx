@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import { supabase } from '@/lib/supabaseClient'
 
 export default async function StudentPage() {
@@ -6,7 +7,7 @@ export default async function StudentPage() {
     .from('Student')
     .select('id, created_at, name')
     .order('id', { ascending: true })
-
+  console.log("Dynamic Fetched students:", students);
   if (error) {
     console.error('Error fetching students:', error.message)
     return <p className="text-red-600">Error: {error.message}</p>

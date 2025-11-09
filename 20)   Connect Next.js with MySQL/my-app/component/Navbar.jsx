@@ -42,6 +42,21 @@ function Navbar() {
             >
               Jokes Project
             </Link>
+            <li>
+            <Link
+              href="/rendring/static"
+              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+            >
+              Static Rendring
+            </Link>
+          </li><li>
+            <Link
+              href="/rendring/dynamic"
+              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+            >
+              Dynamic Rendring
+            </Link>
+          </li>
           <li>
             <Link
               href="/about"
