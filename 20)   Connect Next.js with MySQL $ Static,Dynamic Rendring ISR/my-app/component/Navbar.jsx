@@ -44,19 +44,25 @@ function Navbar() {
             </Link>
             <li>
             <Link
-              href="/rendring/static"
+              href="/rendering/static"
               className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
             >
               Static Rendring
             </Link>
-          </li><li>
             <Link
-              href="/rendring/dynamic"
+              href="/rendering/dynamic"
               className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
             >
               Dynamic Rendring
             </Link>
+          </li><li>
           </li>
+            <Link
+              href="/rendering/cache"
+              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+            >
+            Cache
+            </Link>
           <li>
             <Link
               href="/about"
