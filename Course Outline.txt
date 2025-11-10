@@ -1,0 +1,20 @@
+01) Introduction
+02) Installing Next.js
+03) Nested Route and Layout
+04) Navbar (Link) in Next.js
+05) Route Group
+06) Modules Css
+07) Image Component
+08) Fonts in Next
+09) Meta Data in Next
+10) Client Side Vs Server Side Rendring
+11) Dynamic Routes , Params in Next
+12) SearchParams in Next for Server Component
+13) useSearchParams in Next for Client Component
+14) Catch‑All Segments
+15) Data Fetching with ServerComponents
+16) Data Fetching with Client Components
+17) Loading in Server or Client Component
+18) Random Jokes Generator App in Next.js
+19) Suspense in Next.js
+20) Connect Next.js with MySQL $ Static,Dynamic Rendring ISR
