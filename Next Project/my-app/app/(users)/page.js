@@ -1,4 +1,5 @@
 import React from 'react';
+import ".././globals.css";
 import Image from 'next/image';
 import Profile from "../../public/Pictures/Hurairah.png";
 // import Profile from "../../public/Pictures/1.png";
