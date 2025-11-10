@@ -18,3 +18,7 @@
 18) Random Jokes Generator App in Next.js
 19) Suspense in Next.js
 20) Connect Next.js with MySQL $ Static,Dynamic Rendring ISR
+21) Fix 404 Route Errors with notFound() in Next.js 
+22) GenerateStaticParams in Next.js
+23) Next.js Server Actions Insert Contact Form Data
+24) Form Action in Client Component

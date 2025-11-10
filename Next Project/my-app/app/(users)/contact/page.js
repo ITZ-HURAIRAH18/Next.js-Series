@@ -4,6 +4,20 @@ import { useActionState, useState, useTransition } from "react";
 import { contactAction } from "./contact.action";
 import { useFormStatus } from "react-dom";
 import { Loader } from "lucide-react";
+// const contactAction = async (fullName, email, message) => {
+
+//     const { full_name, email, message } = await supabase.from("ContactForm").insert([
+//       {
+//         full_name: fullName,
+//         email: email,
+//         message: message,
+//       },
+//     ]);
+//     console.log("Error:", full_name, email, message);
+// }
+ 
+    // Insert form data into Supabase
+  
 
 const Contact = () => {
   // const [state, formAction, isPending] = useActionState(contactAction, null);
@@ -12,6 +26,7 @@ const Contact = () => {
 
   const handleContactSubmit = (formData) => {
     const { fullName, email, message } = Object.fromEntries(formData);
+     console.log("Form Submitted:", { fullName, email, message });
     startTransition(async () => {
       const res = await contactAction(fullName, email, message);
       setContactFormResponse(res);
