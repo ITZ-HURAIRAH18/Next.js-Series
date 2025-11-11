@@ -2,7 +2,6 @@
 
 import { useActionState } from "react";
 import { contactAction } from "./contact.action";
-
 import { Loader } from "lucide-react";
 import { useFormState } from "react-dom";
 

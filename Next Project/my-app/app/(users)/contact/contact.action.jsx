@@ -1,5 +1,7 @@
 "use server";
 
+import { redirect } from "next/navigation";
+
 import { createServerClient } from "../../../lib/supabaseServer.js";
 
 export const contactAction = async (previousState, fullName, email, message) => {
@@ -31,8 +33,11 @@ export const contactAction = async (previousState, fullName, email, message) => 
     }
 
     // Success response
-    return { success: true, message: "Form submitted successfully!" };
+    // return { success: true, message: "Form submitted successfully!" };
+    redirect("/")
   } catch (error) {
+    // Re-throw redirect errors to allow Next.js to handle them
+    if (error.digest?.startsWith("NEXT_REDIRECT")) throw error;
     console.error("Unexpected error:", error);
     return {
       success: false,
