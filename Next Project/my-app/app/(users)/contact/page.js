@@ -4,6 +4,7 @@ import { useActionState } from "react";
 import { contactAction } from "./contact.action";
 
 import { Loader } from "lucide-react";
+import { useFormState } from "react-dom";
 
 const Contact = () => {
   const [state, formAction, isPending] = useActionState(contactAction, null);
@@ -75,7 +76,7 @@ const Contact = () => {
                 </div>
 
                 {/* Submit Button */}
-                <Submit isPending={isPending} />
+                <Submit  />
               </form>
             </div>
 
@@ -99,7 +100,8 @@ const Contact = () => {
 
 export default Contact;
 
-const Submit = ({ isPending }) => {
+const Submit = () => {
+  const { isPending,data,action } = useFormState();
   return (
     <>
       <button

@@ -23,3 +23,4 @@
 23) Next.js Server Actions Insert Contact Form Data
 24) Form Action in Client Component
 25) UseActionStateShow Loading + Handle Form Response Easily in Next.js
+26) UseFormStatus Hook (Send status of 1st Component to other Component)
