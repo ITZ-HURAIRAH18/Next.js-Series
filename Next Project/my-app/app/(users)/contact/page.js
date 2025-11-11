@@ -1,13 +1,26 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { contactAction } from "./contact.action";
 import { Loader } from "lucide-react";
-import { useFormState } from "react-dom";
+import { useFormStatus } from "react-dom";
+import { useRouter } from "next/navigation";
 
 const Contact = () => {
   const [state, formAction, isPending] = useActionState(contactAction, null);
+  const router = useRouter();
 
+  // Handle redirect after successful submission
+  useEffect(() => {
+    if (state?.success) {
+      // Small delay to show success message before redirect
+      const timer = setTimeout(() => {
+        router.push("/");
+      }, 1000); // 2 second delay
+
+      return () => clearTimeout(timer);
+    }
+  }, [state?.success, router]);
   return (
     <>
       <div className="min-h-screen bg-[rgb(14,14,14)] text-white">
@@ -75,7 +88,7 @@ const Contact = () => {
                 </div>
 
                 {/* Submit Button */}
-                <Submit  />
+                <Submit />
               </form>
             </div>
 
@@ -100,15 +113,15 @@ const Contact = () => {
 export default Contact;
 
 const Submit = () => {
-  const { isPending,data,action } = useFormState();
+  const { pending } = useFormStatus();
   return (
     <>
       <button
         type="submit"
-        disabled={isPending}
+        disabled={pending}
         className="w-full bg-pink-600 hover:bg-pink-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
       >
-        {isPending ? (
+        {pending ? (
           <Loader className="animate-spin" />
         ) : (
           <span> Send Message</span>

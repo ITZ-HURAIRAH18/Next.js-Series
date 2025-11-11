@@ -47,22 +47,26 @@ function Navbar() {
               href="/rendering/static"
               className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
             >
-              Static Rendring
+              Static Rendering
             </Link>
+            </li>
+              <li>
             <Link
               href="/rendering/dynamic"
               className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
             >
-              Dynamic Rendring
+              Dynamic Rendering
             </Link>
-          </li><li>
           </li>
+          <li>
+         
             <Link
               href="/rendering/cache"
               className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
             >
             Cache
             </Link>
+             </li>
           <li>
             <Link
               href="/about"
