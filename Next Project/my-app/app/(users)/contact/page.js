@@ -1,37 +1,12 @@
 "use client";
 
-import { useActionState, useState, useTransition } from "react";
+import { useActionState } from "react";
 import { contactAction } from "./contact.action";
-import { useFormStatus } from "react-dom";
-import { Loader } from "lucide-react";
-// const contactAction = async (fullName, email, message) => {
 
-//     const { full_name, email, message } = await supabase.from("ContactForm").insert([
-//       {
-//         full_name: fullName,
-//         email: email,
-//         message: message,
-//       },
-//     ]);
-//     console.log("Error:", full_name, email, message);
-// }
- 
-    // Insert form data into Supabase
-  
+import { Loader } from "lucide-react";
 
 const Contact = () => {
-  // const [state, formAction, isPending] = useActionState(contactAction, null);
-  const [isPending, startTransition] = useTransition();
-  const [contactFormResponse, setContactFormResponse] = useState(null);
-
-  const handleContactSubmit = (formData) => {
-    const { fullName, email, message } = Object.fromEntries(formData);
-     console.log("Form Submitted:", { fullName, email, message });
-    startTransition(async () => {
-      const res = await contactAction(fullName, email, message);
-      setContactFormResponse(res);
-    });
-  };
+  const [state, formAction, isPending] = useActionState(contactAction, null);
 
   return (
     <>
@@ -43,7 +18,7 @@ const Contact = () => {
             </h1>
 
             <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-8 border border-gray-800">
-              <form className="space-y-6" action={handleContactSubmit}>
+              <form className="space-y-6" action={formAction}>
                 {/* Full Name Field */}
 
                 <div>
@@ -100,18 +75,18 @@ const Contact = () => {
                 </div>
 
                 {/* Submit Button */}
-                <Submit />
+                <Submit isPending={isPending} />
               </form>
             </div>
 
             <section>
-              {contactFormResponse && (
+              {state && (
                 <p
-                  className={` p-4 mt-5 text-center capitalize ${
-                    contactFormResponse.success ? "bg-green-500" : "bg-red-500"
+                  className={`p-4 mt-5 text-center capitalize ${
+                    state.success ? "bg-green-500" : "bg-red-500"
                   }`}
                 >
-                  {contactFormResponse.message}
+                  {state.message}
                 </p>
               )}
             </section>
@@ -124,16 +99,15 @@ const Contact = () => {
 
 export default Contact;
 
-const Submit = () => {
-  const { pending, data, method, action } = useFormStatus();
+const Submit = ({ isPending }) => {
   return (
     <>
       <button
         type="submit"
-        disabled={pending}
+        disabled={isPending}
         className="w-full bg-pink-600 hover:bg-pink-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
       >
-        {pending ? (
+        {isPending ? (
           <Loader className="animate-spin" />
         ) : (
           <span> Send Message</span>

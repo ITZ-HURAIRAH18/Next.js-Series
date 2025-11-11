@@ -1,25 +1,11 @@
 "use server";
 
-import { createClient } from "@supabase/supabase-js";
+import { createServerClient } from "../../../lib/supabaseServer.js";
 
-export const contactAction = async (fullName, email, message) => {
+export const contactAction = async (previousState, fullName, email, message) => {
   try {
-    // Create a fresh Supabase client for server actions to avoid schema cache issues
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-    if (!supabaseUrl || !supabaseAnonKey) {
-      throw new Error("Missing Supabase environment variables");
-    }
-
-    const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-      auth: {
-        persistSession: false,
-      },
-      db: {
-        schema: "public",
-      },
-    });
+    // Create a fresh Supabase client for server actions
+    const supabase = createServerClient();
 
     // Insert form data into Supabase
     const { data, error } = await supabase
