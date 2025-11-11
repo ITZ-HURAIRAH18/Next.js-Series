@@ -1,7 +1,10 @@
+"use client";
 import { Home, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function NotFoundPage() {
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-gray-900 flex items-center justify-center px-6 relative overflow-hidden">
@@ -32,20 +35,23 @@ export default function NotFoundPage() {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          {/* Go Home */}
-          <Link href="/" className="group flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+          {/* ✅ Go Home */}
+          <Link
+            href="/"
+            className="group flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
             <Home size={20} />
             <span>Go Home</span>
           </Link>
 
-          {/* Go Back */}
-          <Link
-            href="/"
+          {/* ✅ Go Back (Fixed) */}
+          <button
+            onClick={() => router.back()}
             className="group flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white font-medium py-3 px-6 rounded-lg border border-gray-600 hover:border-gray-500 transition-all duration-300 transform hover:scale-105 shadow-md"
           >
             <ArrowLeft size={20} />
             <span>Go Back</span>
-          </Link>
+          </button>
         </div>
       </div>
     </div>
