@@ -27,3 +27,5 @@
 27) Redirect in Next.js (Used Only in Server Side)
 28) UseRouter Hook in Next.js | Client Side Navigation Explained
 29) GO Back in Next.js
+30) Use Transition Hook 
+31) RevalidatePath in Next.js – Fixing Form Issues, Server Actions
