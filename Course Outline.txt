@@ -29,3 +29,5 @@
 29) GO Back in Next.js
 30) Use Transition Hook 
 31) RevalidatePath in Next.js – Fixing Form Issues, Server Actions
+32) Client-Side Revalidation in Next.js with router.refresh() 
+33) On-Demand Revalidation  

@@ -1,0 +1,2 @@
+When we use revalidate on static page then its On demand 
+and when we used  revalidate on dynamic page then its called revalidate Path()

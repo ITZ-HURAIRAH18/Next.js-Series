@@ -8,16 +8,16 @@ if (!supabaseUrl || !supabaseAnonKey) {
     'Missing Supabase environment variables. Please add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to .env.local'
   )
 }
-
+export const createServerClient = () => createClient(supabaseUrl, supabaseAnonKey)
 // Create a fresh Supabase client for server-side operations
-export function createServerClient() {
-  return createClient(supabaseUrl, supabaseAnonKey, {
-    auth: {
-      persistSession: false,
-    },
-    db: {
-      schema: "public",
-    },
-  })
-}
+// export function createServerClient() {
+//   return createClient(supabaseUrl, supabaseAnonKey, {
+//     auth: {
+//       persistSession: false,
+//     },
+//     db: {
+//       schema: "public",
+//     },
+//   })
+// }
 
