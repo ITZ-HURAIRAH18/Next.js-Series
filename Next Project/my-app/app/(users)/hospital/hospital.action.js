@@ -32,7 +32,7 @@ export const createHospitalAction = async (data) => {
       };
     }
 
-    revalidatePath("/hospital");
+    // revalidatePath("/hospital");
 
     return { 
       success: true, 

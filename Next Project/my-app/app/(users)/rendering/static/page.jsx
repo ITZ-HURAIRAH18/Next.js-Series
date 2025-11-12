@@ -1,7 +1,7 @@
 import { supabase } from '@/lib/supabaseClient'
 
 // Truly static - built once, never updates
-export const revalidate = 10
+// export const revalidate = 10
 
 export default async function StudentPage() {
   // ✅ Fetch all rows from Student table

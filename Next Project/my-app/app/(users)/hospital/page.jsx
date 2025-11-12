@@ -5,6 +5,8 @@ import { HospitalForm } from "./HospitalForm";
 const HospitalPage = async () => {
   // Initialize Supabase client
   const supabase = createServerClient();
+
+  
   
   // Fetch hospital data from Supabase
   const { data: hospitalsData, error } = await supabase
