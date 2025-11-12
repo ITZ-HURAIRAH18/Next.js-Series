@@ -58,6 +58,14 @@ function Navbar() {
               Dynamic Rendering
             </Link>
           </li>
+              <li>
+            <Link
+              href="/hospital"
+              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+            >
+             Hospital
+            </Link>
+          </li>
           <li>
          
             <Link
