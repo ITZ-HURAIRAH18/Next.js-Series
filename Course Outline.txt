@@ -32,3 +32,4 @@
 32) Client-Side Revalidation in Next.js with router.refresh() 
 33) On-Demand Revalidation  
 34) Framer Motion in Next.js (Used Only in Client Component)
+35) Modal in Next.js & React  with Shadcn UI
