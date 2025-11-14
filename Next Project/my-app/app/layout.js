@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Oswald, Poppins } from "next/font/google";
 import Navbar from "../component/Navbar";
-
+import Sidebar from "@/components/Sidebar";
 const oswald = Oswald({
   subsets: ["latin"],
   variable: "--font-oswald",
@@ -26,9 +26,12 @@ export default function RootLayout({ children }) {
         className={`${oswald.variable} ${poppins.variable} font-sans bg-gray-100 min-h-screen`}
       >
         <Navbar />
+        <header className="flex items-center gap-4 p-4 border-b">
+          <Sidebar />
+          <h1 className="text-xl font-bold">My Website</h1>
+        </header>
         {children}
       </body>
     </html>
   );
 }
-
