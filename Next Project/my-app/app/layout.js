@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Oswald, Poppins } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
 import Navbar from "../component/Navbar";
 import Sidebar from "@/components/Sidebar";
 const oswald = Oswald({
@@ -28,8 +29,10 @@ export default function RootLayout({ children }) {
         <Navbar />
         <header className="flex items-center gap-4 p-4 border-b">
           <Sidebar />
+          
           <h1 className="text-xl font-bold">My Website</h1>
         </header>
+          <Toaster position="top-right" />
         {children}
       </body>
     </html>
