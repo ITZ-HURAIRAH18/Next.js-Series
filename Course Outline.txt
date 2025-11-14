@@ -33,3 +33,5 @@
 33) On-Demand Revalidation  
 34) Framer Motion in Next.js (Used Only in Client Component)
 35) Modal in Next.js & React  with Shadcn UI
+36) Drawer in Next.js
+37) Create Side Navbar in Next.js using shadcn Sheet
