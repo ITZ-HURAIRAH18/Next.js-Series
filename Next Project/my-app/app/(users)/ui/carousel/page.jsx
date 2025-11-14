@@ -12,7 +12,7 @@ export default function CarouselExample() {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-950 text-white">
+    <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
       <div className="w-full max-w-3xl">
         <Carousel className="w-full">
           <CarouselContent>

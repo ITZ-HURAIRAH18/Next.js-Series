@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 function Navbar() {
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50 font-oswald">
+    <nav className="bg-background border-b border-border sticky top-0 z-50 font-oswald">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold text-blue-600 cursor-pointer">
+        <div className="text-2xl font-bold text-primary cursor-pointer">
           MyBrand
         </div>
 
@@ -15,7 +16,7 @@ function Navbar() {
           <li>
             <Link
               href="/"
-              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+              className="text-foreground hover:text-primary transition duration-300 font-medium"
             >
               Home
             </Link>
@@ -23,7 +24,7 @@ function Navbar() {
           <li>
             <Link
               href="/clientcomp"
-              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+              className="text-foreground hover:text-primary transition duration-300 font-medium"
             >
               Client
             </Link>
@@ -31,21 +32,21 @@ function Navbar() {
           <li>
             <Link
               href="/servercomp"
-              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+              className="text-foreground hover:text-primary transition duration-300 font-medium"
             >
               Server
             </Link>
           </li>
            <Link
               href="/projects/joke"
-              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+              className="text-foreground hover:text-primary transition duration-300 font-medium"
             >
               Jokes Project
             </Link>
             <li>
             <Link
               href="/rendering/static"
-              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+              className="text-foreground hover:text-primary transition duration-300 font-medium"
             >
               Static Rendering
             </Link>
@@ -53,7 +54,7 @@ function Navbar() {
               <li>
             <Link
               href="/rendering/dynamic"
-              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+              className="text-foreground hover:text-primary transition duration-300 font-medium"
             >
               Dynamic Rendering
             </Link>
@@ -61,7 +62,7 @@ function Navbar() {
               <li>
             <Link
               href="/hospital"
-              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+              className="text-foreground hover:text-primary transition duration-300 font-medium"
             >
              Hospital
             </Link>
@@ -70,7 +71,7 @@ function Navbar() {
          
             <Link
               href="/rendering/cache"
-              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+              className="text-foreground hover:text-primary transition duration-300 font-medium"
             >
             Cache
             </Link>
@@ -78,7 +79,7 @@ function Navbar() {
           <li>
             <Link
               href="/about"
-              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+              className="text-foreground hover:text-primary transition duration-300 font-medium"
             >
               About
             </Link>
@@ -86,7 +87,7 @@ function Navbar() {
           <li>
             <Link
               href="/about/team"
-              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+              className="text-foreground hover:text-primary transition duration-300 font-medium"
             >
               Team
             </Link>
@@ -94,7 +95,7 @@ function Navbar() {
           <li>
             <Link
               href="/service"
-              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+              className="text-foreground hover:text-primary transition duration-300 font-medium"
             >
               Services
             </Link>
@@ -102,13 +103,17 @@ function Navbar() {
           <li>
             <Link
               href="/contact"
-              className="text-gray-700 hover:text-blue-600 transition duration-300 font-medium"
+              className="text-foreground hover:text-primary transition duration-300 font-medium"
             >
               Contact
             </Link>
           </li>
         </ul>
 
+        {/* Theme Toggle */}
+        <div className="flex items-center">
+          <ThemeToggle />
+        </div>
         
       </div>
     </nav>

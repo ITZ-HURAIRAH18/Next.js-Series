@@ -15,20 +15,20 @@ export default function ModalExample() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-950 text-white">
+    <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
       <Dialog open={open} onOpenChange={setOpen}>
         {/* Trigger Button */}
         <DialogTrigger asChild>
-          <Button onClick={() => setOpen(true)} className="bg-blue-600 hover:bg-blue-700">
+          <Button onClick={() => setOpen(true)} className="bg-primary hover:bg-primary/80">
             Open Modal
           </Button>
         </DialogTrigger>
 
         {/* Modal Content */}
-        <DialogContent className="bg-gray-900 text-white border border-gray-700">
+        <DialogContent className="bg-card text-card-foreground border border-border">
           <DialogHeader>
             <DialogTitle className="text-xl font-semibold">Welcome!</DialogTitle>
-            <DialogDescription className="text-gray-400">
+            <DialogDescription className="text-muted-foreground">
               This is a ShadCN modal example in Next.js.
             </DialogDescription>
           </DialogHeader>
@@ -36,7 +36,7 @@ export default function ModalExample() {
           <div className="mt-4 flex justify-end">
             <Button
               onClick={() => setOpen(false)}
-              className="bg-red-600 hover:bg-red-700"
+              variant="destructive"
             >
               Close
             </Button>

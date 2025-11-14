@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Oswald, Poppins } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "../component/Navbar";
 import Sidebar from "@/components/Sidebar";
 const oswald = Oswald({
@@ -22,18 +23,25 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${oswald.variable} ${poppins.variable} font-sans bg-gray-100 min-h-screen`}
+        className={`${oswald.variable} ${poppins.variable} font-sans min-h-screen`}
       >
-        <Navbar />
-        <header className="flex items-center gap-4 p-4 border-b">
-          <Sidebar />
-          
-          <h1 className="text-xl font-bold">My Website</h1>
-        </header>
-          <Toaster position="top-right" />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <header className="flex items-center gap-4 p-4 border-b border-border bg-background">
+            <Sidebar />
+            
+            <h1 className="text-xl font-bold text-foreground">My Website</h1>
+          </header>
+            <Toaster position="top-right" />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
