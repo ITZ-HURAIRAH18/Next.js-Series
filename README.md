@@ -1,4 +1,4 @@
-"# 🚀 Next.js Series - Complete Learning Project
+ 🚀 Next.js Series - Complete Learning Project
 
 A comprehensive Next.js application demonstrating modern web development concepts, from basic routing to advanced features like server actions, dark mode, and UI components.
 
