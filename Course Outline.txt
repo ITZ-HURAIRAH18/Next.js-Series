@@ -36,3 +36,5 @@
 36) Drawer in Next.js
 37) Create Side Navbar in Next.js using shadcn Sheet
 38) Sonner Toast Notifications in Next.js Success, Error & Custom Toasts Tutorial
+39) Dark & Light Mode Toggle in Next.js with Next-Themes & Shadcn UI
+40) How to Add Tables in Next.js App Using Origin UI
